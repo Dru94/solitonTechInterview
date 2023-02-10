@@ -1,24 +1,24 @@
 from django.shortcuts import render
-from .models import Fleet, Driver
-from .serializers import FleetSerializer, DriverSerializer
+from .models import Car, Driver
+from .serializers import CarSerializer, DriverSerializer
 from rest_framework import generics
 
 # Create your views here.
 
 # fleet
 class FleetListView(generics.ListCreateAPIView):
-    queryset = Fleet.objects.all()
-    serializer_class = FleetSerializer
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
     
 
 class FleetUpdateView(generics.RetrieveUpdateAPIView):
-    queryset = Fleet.objects.all()
-    serializer_class = FleetSerializer
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
     
     
 class FleetDeleteView(generics.RetrieveDestroyAPIView):
-    queryset = Fleet.objects.all()
-    serializer_class = FleetSerializer
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
     
     
 # drivers
